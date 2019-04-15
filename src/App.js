@@ -49,7 +49,8 @@ class App extends Component {
         });
       });
     } else {
-      fetch(`https://api.instagram.com/v1/self/media/recent?access_token=${this.state.access_token}`)
+      // fetch(`https://api.instagram.com/v1/self/media/recent?access_token=${this.state.access_token}`)
+      fetch(`https://api.instagram.com/v1/users/self/?access_token=${this.state.access_token}`)
       .then(res => res.json())
       .then(res => {
         console.log('final');
