@@ -7,12 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     // check if fresh session or redirected back after authentication
-    var access_token = '';
+    var access_token = null;
     var url = window.location.href;
     var urlParts = url.split('?');
     urlParts.forEach(part => {
-      var data = urlParts.split('=');
-      if (data[0] == 'access_token') {
+      var data = part.split('=');
+      if (data[0] === 'access_token') {
         access_token = data[1];
       }
     });
