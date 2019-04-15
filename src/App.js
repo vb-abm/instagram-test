@@ -30,7 +30,7 @@ class App extends Component {
       var code_redirect_url = encodeURI(`https://brave-raman-0a161b.netlify.com/?havecode`);
       window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=7c118ddc9c8e42f9bb7983cbfa2049d3&redirect_uri=${code_redirect_url}&response_type=code`;
     } else if (!this.state.access_token) {
-      var at_redirect_url = encodeURI(`https://brave-raman-0a161b.netlify.com/?haveat`);
+      var at_redirect_url = encodeURI(`https://brave-raman-0a161b.netlify.com/?got_access_token`);
       fetch(`https://api.instagram.com/oauth/access_token`, {
         method: 'post',
         body: JSON.stringify({
