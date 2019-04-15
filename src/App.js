@@ -33,13 +33,13 @@ class App extends Component {
       var at_redirect_url = encodeURI(`https://brave-raman-0a161b.netlify.com/?haveat`);
       fetch(`https://api.instagram.com/oauth/access_token`, {
         method: 'post',
-        data: {
+        body: JSON.stringify({
           client_id: '7c118ddc9c8e42f9bb7983cbfa2049d3',
           client_secret: '14046b027f2f48c38ef5c7e59a6e724a',
           grant_type: 'authorization_code',
           redirect_uri: at_redirect_url,
           code: this.state.code
-        }
+        })
       })
       .then(res => res.json())
       .then(res => {
